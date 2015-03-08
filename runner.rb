@@ -10,6 +10,8 @@ class Runner
 
 
   def feature_generator(feature_name, language)
+    testing_string = "class HeyThere\n\n\s\sdef something()\n\s\s\s\sputs 'yay'\n\s\send\nend"
+
     paths = []
     paths << "#{name_cleaner(feature_name)}/model.#{language_extension_generator(language.downcase)}"
     paths << "#{name_cleaner(feature_name)}/controller.#{language_extension_generator(language.downcase)}"
@@ -23,7 +25,7 @@ class Runner
         FileUtils.mkdir_p(dirname)
       end
 
-      File.open(path, 'w+') { |f| f.write("write your stuff here")  }
+      File.open(path, 'w+') { |f| f.write(testing_string)  }
     end
 
     
@@ -45,4 +47,4 @@ end
 
 app = Runner.new
 
-app.feature_generator("my cool feature", "ruby")
+app.feature_generator("my cool feature 2", "ruby")
