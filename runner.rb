@@ -11,9 +11,10 @@ class Runner
 
   def feature_generator(feature_name, language)
     testing_string = "class HeyThere\n\n\s\sdef something()\n\s\s\s\sputs 'yay'\n\s\send\nend"
+    server_config_string = "require 'webrick'\nserver = WEBrick::HTTPServer.new(:Port => 8080)\nserver.mount_proc('/') {|request, response| response.body = File.open('sample.html.erb')}\ntrap('INT') {server.shutdown}\nserver.start"
 
     paths = []
-    paths << "server_config.#{language_extension_generator(language.downcase)}"
+    paths << "setup/server_config.#{language_extension_generator(language.downcase)}"
     paths << "application/#{name_cleaner(feature_name)}/model.#{language_extension_generator(language.downcase)}"
     paths << "application/#{name_cleaner(feature_name)}/controller.#{language_extension_generator(language.downcase)}"
     paths << "application/#{name_cleaner(feature_name)}/views/index.html"
