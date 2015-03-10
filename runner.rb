@@ -5,7 +5,26 @@ class Runner
   end
 
   def application_generator(application_name, language)
-    # TODO pull in the server configuration options for the specific language
+    server_config_string = ruby_server_connection
+
+    paths = {}
+    paths[:server] = "setup/application.#{language_extension_generator(language.downcase)}"
+
+    paths.each do |key, value|
+      dirname = File.dirname(value)
+
+      unless File.directory?(dirname)
+        FileUtils.mkdir_p(dirname)
+      end
+
+      if key == :server
+        File.open(value, 'w+') { |f| f.write(server_config_string) }
+      end
+    end
+  end
+
+  def ruby_server_connection
+    "require 'webrick'\nserver = WEBrick::HTTPServer.new(:Port => 8080)\nserver.mount_proc('/') {|request, response| response.body = File.open('sample.html.erb')}\ntrap('INT') {server.shutdown}\nserver.start"
   end
 
 
@@ -62,4 +81,4 @@ end
 
 app = Runner.new
 
-app.feature_generator("my cool feature 2", "ruby")
+app.application_generator("my cool feature 2", "ruby")
