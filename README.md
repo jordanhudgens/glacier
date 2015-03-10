@@ -21,3 +21,7 @@ TODOs
 ## To run the server
 
 * run `ruby index.rb`
+
+### Immediate todos
+
+* Refactor code to pull in server code depending on programming language
