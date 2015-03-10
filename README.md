@@ -25,3 +25,5 @@ TODOs
 ### Immediate todos
 
 * Refactor code to pull in server code depending on programming language
+
+* Find out how to load items from the base directory
