@@ -17,3 +17,7 @@ TODOs
 * Integrate form element for passing data between pages
 
 * Deploy to live server, Ruby: https://devcenter.heroku.com/articles/static-sites-ruby
+
+## To run the server
+
+* run `ruby index.rb`
