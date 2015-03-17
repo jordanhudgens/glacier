@@ -2,6 +2,11 @@ require 'fileutils'
 
 class Runner
   def initialize
+    puts "What is the name of the application?"
+    application_name = gets.chomp
+
+    puts "What language do you want to use?"
+    language = gets.chomp
   end
 
   def application_generator(application_name, language)
@@ -81,4 +86,4 @@ end
 
 app = Runner.new
 
-app.application_generator("my cool feature 2", "ruby")
+# app.application_generator("my cool feature 2", "ruby")
