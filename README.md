@@ -27,3 +27,5 @@ TODOs
 * Refactor code to pull in server code depending on programming language
 
 * Find out how to load items from the base directory
+
+* After the application is created, have the other methods reference the language, maybe create an application.yml file that stores the info and can be referenced
