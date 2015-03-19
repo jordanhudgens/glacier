@@ -8,8 +8,6 @@ TODOs
 
 * Setup assets/public path
 
-* Get user feedback to generator application
-
 * Integrate server configurations to run the webserver for the specific language
 
 * Integrate some form of database for CRUD operations
