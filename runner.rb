@@ -62,4 +62,4 @@ end
 
 app = Runner.new
 
-# app.application_generator("my cool feature 2", "ruby")
+app.feature_generator("my cool feature 2", "ruby")
