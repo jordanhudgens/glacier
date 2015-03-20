@@ -11,9 +11,9 @@ class Runner
     @application_name = gets.chomp
 
     puts "What language do you want to use?"
-    language = gets.chomp
+    @language = gets.chomp
 
-    application_generator(@application_name, language)
+    application_generator(@application_name, @language)
     puts "Application: #{@application_name} has been created"
   end
 
@@ -41,7 +41,7 @@ class Runner
   end
 
   def application_yml_config
-    "application_name:#{@application_name}"
+    "application_name:#{@application_name}\nlanguage:#{@language}"
   end
 
   
