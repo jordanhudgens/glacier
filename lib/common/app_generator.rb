@@ -1,4 +1,4 @@
-module AppQuestions
+module AppGenerator
   def app_questions
     puts "What is the name of the application?"
     @application_name = gets.chomp
