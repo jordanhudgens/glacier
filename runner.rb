@@ -19,8 +19,11 @@ class Runner
     create_assets
   end
 
+  def self.new_feature
+    puts "What is the name of your feature?"
+    feature_name = gets.chomp
+    feature_generator(feature_name, @language)
+    #TODO Need to be able to call the language from the yml file
+  end
+
 end
-
-app = Runner.new
-
-app.feature_generator("my cool feature 2222", "ruby")
