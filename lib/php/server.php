@@ -1,8 +1,8 @@
 <?php
-                     // AF_INET6 for IPv6  // IP
+// AF_INET6 for IPv6  // IP
 $socket = socket_create(AF_INET, SOCK_STREAM, 0) or die('Failed to create socket!');
-                  // '127.0.0.1' to limit only to localhost // Port
-socket_bind($socket, 0,                                        8080);
+// '127.0.0.1' to limit only to localhost // Port
+socket_bind($socket, 0, 8080);
 socket_listen($socket);
  
 $msg = '<html><head><title>Goodbye, world!</title></head><body>Goodbye, world!</body></html>';

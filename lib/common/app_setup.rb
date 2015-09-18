@@ -12,6 +12,8 @@ module AppSetup
       "py"
     elsif language == "ruby"
       "rb"
+    elsif language == "php"
+      "php"
     end
   end
 
